@@ -24,7 +24,7 @@ const App: React.FC = () => {
       <Hello/>
       <br/>
       <br/>
-      <Hi/>
+      <Hi title="ok"/>
     </div>
   );
 }

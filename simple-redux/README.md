@@ -1,6 +1,7 @@
 Based on:
 https://create-react-app.dev/docs/adding-typescript/
 https://www.youtube.com/watch?v=_oK9Jd8LH1E
+https://react-redux.js.org/next/api/hooks
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

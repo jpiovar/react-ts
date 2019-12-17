@@ -1,32 +1,23 @@
-import React, { Component } from 'react'; // let's also import Component
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { increaseCounter, decreaseCounter } from "../../redux";
 import './Hello.scss';
 
-interface IChildComponentProps extends React.Props<any> {
-}
 
-interface PassedProps extends React.Props<any> {
-  title: any
-}
+export const Hello = () => {
+  const {count, text} = useSelector((state: any) => state);
+  const dispatch = useDispatch();
 
-type States = {
-  count: number,
-  text: string
-}
-
-export class Hello extends Component<IChildComponentProps & PassedProps, States> {
-  componentWillMount() {
+  const decreaseAction = () => {
+    dispatch(decreaseCounter({ count: 2, text: 'decrease' }));
   }
 
-  componentDidMount() {
-  }
-
-  get componentTitle(): String {
-    return `Hello component ${this.props.title}`;
-  }
-
-  render() {
-    return <div>
-      <span className="hello title">{this.componentTitle}</span>
-    </div>
-  }
-}
+  return (
+    <main className="hello">
+      <div className="title">Count: {count}, Action: {text}</div>
+      <button onClick={() => dispatch(increaseCounter({ count: 1, text: 'increase' }))}>Increase count</button>
+      <br/>
+      <button onClick={decreaseAction}>Decrease count</button>
+    </main>
+  );
+};

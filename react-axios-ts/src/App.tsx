@@ -7,6 +7,7 @@ import './App.css';
 import AddTutorial from "./components/add-tutorial.component";
 import Tutorial from "./components/tutorial.component";
 import TutorialsList from "./components/tutorials-list.component";
+import MainArticle from './components/mainArticle';
 
 // function App() {
 //   return (
@@ -58,6 +59,8 @@ class App extends Component {
             <Route path="/tutorials/:id" component={Tutorial} />
           </Switch>
         </div>
+
+        {/* <MainArticle/> */}
       </div>
   )
   }

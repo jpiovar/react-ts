@@ -43,6 +43,7 @@ export default class TutorialsList extends Component<Props, State>{
   }
 
   retrieveTutorials() {
+    debugger;
     TutorialDataService.getAll()
       .then(response => {
         this.setState({

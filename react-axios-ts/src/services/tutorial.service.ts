@@ -3,6 +3,7 @@ import ITutorialData from "../types/tutorial.type"
 
 class TutorialDataService {
   getAll() {
+    debugger;
     return http.get("/tutorials");
   }
 

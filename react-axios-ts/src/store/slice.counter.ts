@@ -1,4 +1,3 @@
-// src/slice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -6,6 +5,7 @@ const initialState = {
 };
 
 export const name = 'counter';
+
 
 const slice = createSlice({
   name,

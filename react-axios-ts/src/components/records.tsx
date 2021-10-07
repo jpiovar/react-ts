@@ -1,4 +1,4 @@
-import { actions } from '../store/slice.records';
+import { actions } from '../store/records.slice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 export default function Records() {

@@ -1,5 +1,5 @@
 // src/Counter.tsx
-import { actions, decrementAsync, incrementAsync } from '../store/slice.counter';
+import { actions, decrementAsync, incrementAsync } from '../store/counter.slice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 export default function Counter() {

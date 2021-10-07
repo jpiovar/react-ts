@@ -12,6 +12,8 @@ const initialState: CounterState = {
   status: 'idle',
 };
 
+
+
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
 // will call the thunk with the `dispatch` function as the first argument. Async
@@ -20,9 +22,15 @@ const initialState: CounterState = {
 export const incrementAsync = createAsyncThunk(
   'counter/fetchCount',
   async (amount: number) => {
-    const response = await fetchCount(amount);
-    // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    try {
+      const response = await fetchCount(amount);
+      // The value we return becomes the `fulfilled` action payload
+      return response.data;
+    }
+    catch (error) {
+      return error;
+    }
+
   }
 );
 

@@ -1,7 +1,7 @@
 import { Component, ChangeEvent } from "react";
 import { RouteComponentProps } from 'react-router-dom';
 
-import TutorialDataService from "../services/tutorial.service";
+import TutorialDataService from "../services/tutorial.api";
 import ITutorialData from "../types/tutorial.type";
 
 interface RouterProps { // type for `match.params`

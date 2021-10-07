@@ -1,5 +1,5 @@
 // src/Counter.tsx
-import { actions } from '../store/slice.counter';
+import { actions, decrementAsync, incrementAsync } from '../store/slice.counter';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 export default function Counter() {
@@ -10,6 +10,11 @@ export default function Counter() {
       <p>{count}</p>
       <button onClick={() => dispatch(actions.increment())}>+</button>
       <button onClick={() => dispatch(actions.decrement())}>-</button>
+      <br/>
+      with delay
+      <br/>
+      <button onClick={() => dispatch(incrementAsync(1))}>+</button>
+      <button onClick={() => dispatch(decrementAsync(1))}>-</button>
     </div>
   );
 }

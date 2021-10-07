@@ -1,5 +1,5 @@
 import { Component, ChangeEvent } from "react";
-import TutorialDataService from "../services/tutorial.service";
+import TutorialDataService from "../services/tutorial.api";
 import { Link } from "react-router-dom";
 import ITutorialData from '../types/tutorial.type';
 

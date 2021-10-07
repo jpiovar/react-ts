@@ -6,3 +6,11 @@ export function getItemDelay(item = 'new') {
     }, 2000);
   });
 }
+
+export function getAllItemsDelay() {
+  return new Promise<string[]>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(['ok1', 'ok2', 'ok3']);
+    }, 2000);
+  });
+}

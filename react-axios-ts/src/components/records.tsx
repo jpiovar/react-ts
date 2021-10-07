@@ -1,9 +1,18 @@
 import { actions, addItemAsync, removeItemAsync } from '../store/records.slice';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { useEffect } from 'react';
+
 
 export default function Records() {
   const arr = useAppSelector((state) => state.records.value);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    
+  });
+
+  
   return (
     <div>
       <p>{arr}</p>
@@ -16,3 +25,4 @@ export default function Records() {
     </div>
   );
 }
+

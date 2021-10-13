@@ -47,7 +47,7 @@ class App extends Component {
           <Switch>
             <Route exact path={["/", "/home"]} component={HomePage} />
             <Route exact path="/records" component={RecordsPage} />
-            <Route path="/records/:id" component={RecordPage} />
+            <Route path="/records/:itemId" component={RecordPage} />
             <Route>404 Not Found!</Route>
           </Switch>
         </div>

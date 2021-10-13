@@ -7,6 +7,7 @@ export const fetchTableAll = () => async (dispatch: any) => {
 };
 
 export const fetchTableItem = (id: any) => async (dispatch: any) => {
+    debugger;
     const response = await fakestoreapi.get(`/table-data/${id}`);
     dispatch({ type: ActionTypes.SELECTED_TABLE_ITEM, payload: response.data });
 };

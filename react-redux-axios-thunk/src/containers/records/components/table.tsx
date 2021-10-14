@@ -61,6 +61,7 @@ interface TableAllInterface {
     allTableItems: any;
     fetchTableAll: any;
 }
+
 class TableAllItemsComponent extends Component<TableAllInterface> {
     // renderList: any = [];
 
@@ -143,8 +144,12 @@ class TableAllItemsComponent extends Component<TableAllInterface> {
 }
 
 // TableAllItemsComponent
+type PropsTableAllItemsComponentConnected = {
+    hi: string
+}
+
 const mapStateToProps = (state: any) => ({
-    allTableItems: state.allTableItems,
+    allTableItems: state.allTableItems
 });
 
 const mapDispatchToProps = {
@@ -153,18 +158,26 @@ const mapDispatchToProps = {
 
 const TableAllItemsComponentConnected = connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
+    
 )(TableAllItemsComponent);
 
 
 
-class TableComponent extends Component {
+type PropsTableComponent = {
+    hello: string;
+};
+
+class TableComponent extends Component<PropsTableComponent> {
     render() {
+        const hello = this.props.hello;
         return (
             <div>
-                table component
+                table component {hello}
                 {/* <TableAllItems /> */}
-                <TableAllItemsComponentConnected />
+                <TableAllItemsComponentConnected 
+                // hi={hello}
+                />
             </div>
         )
     }

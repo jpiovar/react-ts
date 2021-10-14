@@ -37,10 +37,11 @@ class RecordsPage extends Component {
 
     render() {
         debugger;
+        const hello = "hello world";
         return (
             <>
             {/* <TableAllItemsFetch/> */}
-                <TableComponent/>
+                <TableComponent hello={hello}/>
             </>
         )
     }

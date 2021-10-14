@@ -1,6 +1,8 @@
-import { Component, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchTableAll } from "../../redux/actions/tableActions";
+import { Component,
+    //  useEffect 
+} from "react";
+// import { useDispatch } from "react-redux";
+// import { fetchTableAll } from "../../redux/actions/tableActions";
 import TableComponent from "./components/table";
 
 // const TableAll = () => {
@@ -18,35 +20,27 @@ import TableComponent from "./components/table";
 //     );
 // };
 
-function TableAllItemsFetch() { // Rule 2: call hooks in function component
-    debugger;
-    // const items = useSelector((state: any) => state.allTableItems.items); // Rule 1: call hooks in top-level
-    const dispatch = useDispatch();
+// function TableAllItemsFetch() { // Rule 2: call hooks in function component
+//     debugger;
+//     // const items = useSelector((state: any) => state.allTableItems.items); // Rule 1: call hooks in top-level
+//     const dispatch = useDispatch();
 
-    useEffect(() => {
-        debugger;
-        dispatch(fetchTableAll());
-        // console.log("Table all items: ", items);
-    }, [dispatch]);
-    return <></>
-}
+//     useEffect(() => {
+//         debugger;
+//         dispatch(fetchTableAll());
+//         // console.log("Table all items: ", items);
+//     }, [dispatch]);
+//     return <></>
+// }
 
 class RecordsPage extends Component {
-
-    // renderTable() {
-    //     debugger;
-    //     // return <TableAllItems />
-    //     return <TableAll />;
-    // }
 
     render() {
         debugger;
         return (
-            // <>{this.renderTable()}</>
-            // <TableAll/>
             <>
-            <TableAllItemsFetch/>
-            <TableComponent/>
+            {/* <TableAllItemsFetch/> */}
+                <TableComponent/>
             </>
         )
     }

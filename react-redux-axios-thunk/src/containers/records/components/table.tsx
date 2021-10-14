@@ -60,6 +60,7 @@ const TableAllItems = () => {
 interface TableAllInterface {
     allTableItems: any;
     fetchTableAll: any;
+    hi: string;
 }
 
 class TableAllItemsComponent extends Component<TableAllInterface> {
@@ -122,6 +123,7 @@ class TableAllItemsComponent extends Component<TableAllInterface> {
                 </tr>
             );
         });
+        const hi = this.props.hi;
         return (
             <>
                 <table className="table table-striped">
@@ -138,6 +140,9 @@ class TableAllItemsComponent extends Component<TableAllInterface> {
                         {renderList}
                     </tbody>
                 </table>
+                <div>
+                    {hi}
+                </div>
             </>
         )
     }
@@ -148,18 +153,23 @@ type PropsTableAllItemsComponentConnected = {
     hi: string
 }
 
-const mapStateToProps = (state: any) => ({
-    allTableItems: state.allTableItems
+const mapStateToProps = (state: any, ownProps: any) => ({
+    allTableItems: state.allTableItems,
+    hi: ownProps.hi
 });
 
 const mapDispatchToProps = {
     fetchTableAll
 };
 
+const mergeProps = (ownProps: any, mapProps: any, dispatchProps: any) => ({
+    // ...dispatchProps,
+});
+
 const TableAllItemsComponentConnected = connect(
     mapStateToProps,
     mapDispatchToProps,
-    
+    // mergeProps
 )(TableAllItemsComponent);
 
 
@@ -176,7 +186,7 @@ class TableComponent extends Component<PropsTableComponent> {
                 table component {hello}
                 {/* <TableAllItems /> */}
                 <TableAllItemsComponentConnected 
-                // hi={hello}
+                hi={hello}
                 />
             </div>
         )
